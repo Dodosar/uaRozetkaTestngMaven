@@ -60,7 +60,7 @@ public class FirstTest extends WebDriverSettings{
 	
 	@Test
 	public void FirstRestApiHttpTest() {
-		System.out.println("Step 3: Click to link Page of All SmartPhones");
+
 	}
 	
 	/*@Test(priority = 2)
