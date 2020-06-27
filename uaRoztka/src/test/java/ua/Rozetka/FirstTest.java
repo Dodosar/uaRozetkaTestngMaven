@@ -58,6 +58,11 @@ public class FirstTest extends WebDriverSettings{
 		OpenLink();
 	}
 	
+	@Test
+	public void FirstRestApiHttpTest() {
+		
+	}
+	
 	/*@Test(priority = 2)
 	public void TelephonePage(){
 		System.out.println("Step 3: Click to link Page of All Phones");
