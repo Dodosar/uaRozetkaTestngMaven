@@ -22,7 +22,7 @@ public class SmartPhonePage extends Page{
 
 	public SmartPhonePage(WebDriver driver) {
 		super(driver);
-		title = TitleNames.SMARTPHONE;
+		title = driver.getTitle();
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, 30, 500);
 		// TODO Auto-generated constructor stub

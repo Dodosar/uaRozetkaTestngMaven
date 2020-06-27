@@ -26,8 +26,6 @@ import org.testng.xml.XmlSuite;
 
 public class Report implements IReporter{
 
-    @Override
-
     public void generateReport(List<XmlSuite> arg0, List<ISuite> arg1,
 
             String outputDirectory) {

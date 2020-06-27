@@ -24,7 +24,7 @@ public class TelephonePage extends Page{
 
 	public TelephonePage(WebDriver driver) {
 		super(driver);
-		title = TitleNames.TELEPHONE;
+		title = driver.getTitle();
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, 30, 500);
 		// TODO Auto-generated constructor stub

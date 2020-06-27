@@ -10,16 +10,30 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.AssertJUnit;
 
 
 public class Page {
+	
 	protected String url = "";
-	protected TitleNames title;
+	protected String title;
 	protected static WebDriver driver;
 	protected WebElement link;
 	static int b = 0;
 	
+	
+	public Page OpenLink(){
+		WebElement element = driver.findElement((By) GetLink());
+
+		Actions actions = new Actions(driver);
+
+		actions.moveToElement(element).click().perform();
+		
+		return this;
+	}
 
 	public Page(WebDriver driver) {
 		this.driver = driver;
@@ -29,7 +43,7 @@ public class Page {
 	{
 		return link;
 	}	
-
+	
 	
 	public WebDriver getDriver() {
 		return driver;
@@ -56,6 +70,8 @@ public class Page {
 		}
 	}	
 	
+	
+	
 	public boolean isXPathPresentInaPage(String a) {
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 		List<WebElement> list = driver.findElements(By.xpath(a));
@@ -80,7 +96,7 @@ public class Page {
 	
 	
 	public Page clickOnXpath() {
-		isElemenPresentInaPage(GetLink());
+		isElemenPresentInaPage(GetLink());		
 		GetLink().click();		
 		return this;
 	}
@@ -161,5 +177,6 @@ public class Page {
 	            e.printStackTrace();
 	        }
 	}
+
 
 }

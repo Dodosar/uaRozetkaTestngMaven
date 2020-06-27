@@ -1,6 +1,7 @@
 package ua.Rozetka;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import ua.rozetka.PDFReport;
 
 import java.util.concurrent.TimeUnit;
 

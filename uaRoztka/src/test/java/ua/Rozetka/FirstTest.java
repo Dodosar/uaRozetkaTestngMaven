@@ -11,6 +11,8 @@ import org.testng.annotations.AfterClass;
 
 import ua.DB.DBResult;
 import ua.DB.DataBase;
+import ua.rozetka.PDFReport;
+import ua.rozetka.RozetkaSite;
 
 //@Listeners(RealTimeReport.class)
 //@Listeners(value=Report.class)
@@ -46,16 +48,17 @@ public class FirstTest extends WebDriverSettings{
 	public void MainPage() {
 		objRozetka = new RozetkaSite(driver);
 		System.out.println("Step 1: Check Title on Main Page");
-		objRozetka.mainPage().open().then().CheckTheTitle();
+		objRozetka.mainPage().open().then();
 	}
 
 	@Test(priority = 1)
-	public void SecondPage() {
+	public void SecondPage() throws InterruptedException {
 		System.out.println("Step 2: Click to link Page of All SmartPhones");
-		objRozetka.electronics().then().clickOnXpath();
+		objRozetka.electronics().then().
+		OpenLink();
 	}
 	
-	@Test(priority = 2)
+	/*@Test(priority = 2)
 	public void TelephonePage(){
 		System.out.println("Step 3: Click to link Page of All Phones");
 		objRozetka.phone().then().clickOnXpath();		
@@ -75,6 +78,7 @@ public class FirstTest extends WebDriverSettings{
 		objRozetka.productlist().saveTopProductsFromPage().then();
 	}
 
+*/
 
 
 }

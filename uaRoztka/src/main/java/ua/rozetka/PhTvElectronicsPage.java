@@ -5,13 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class PhTvElectronicsPage extends Page {
 
-	WebDriverWait wait;
-	@FindBy(xpath = "//a[contains(@href,'telefony-tv-i-ehlektronika')]")
+	WebDriverWait wait = new WebDriverWait(driver, 10);;
+	@FindBy(xpath = "//a[@class='menu-categories__link js-menu-categories__link menu-categories__link_state_hovered']")
 	protected WebElement link;
 
 	@Override
@@ -22,10 +23,10 @@ public class PhTvElectronicsPage extends Page {
 	
 	public PhTvElectronicsPage(WebDriver driver) {
 		super(driver);
-		title = TitleNames.SMARTPAGE;
+		title = driver.getTitle();
 		PageFactory.initElements(driver, this);
-		wait = new WebDriverWait(driver, 30, 500);
 	}
+
 
 	/*public void GoToSmartTVElect() {		
 		try{	
